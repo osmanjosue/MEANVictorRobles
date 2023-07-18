@@ -90,3 +90,12 @@ header a:hover{
     background: rgba(255,255,255, 0.7);
     padding-top:120px;
 }
+
+/* Pie de pagina */
+
+footer{
+    width:75%;
+    margin: 0px auto;
+    padding-top: 15px;
+    color: rgba(0,0,0,0.5);
+}
