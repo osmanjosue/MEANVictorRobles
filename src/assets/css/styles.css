@@ -38,13 +38,14 @@ header ul{
     width: 38%;
     height: inherit;
     margin:0px auto;
+    margin-top:-3px;
 }
 
 header ul li{
     display: inline-block;
     margin: 0px auto;
     text-align: center;
-    line-height: 90px;
+    line-height: 88px;
 }
 
 header a{
@@ -63,6 +64,29 @@ header a:hover{
 
 /* logotipo */
 
-header #logo a:hover{
+#logo {
+    font-family:"finger";
+    font-size: 30px;
+}
+
+#logo a{
+    transition: color 500ms, transform 500ms;
+}
+
+#logo a:hover{
     background: transparent;
+    color:black;
+    transform:scale(1.5, 1.5);
+}
+
+/* Contenedor Principal */
+
+#content{
+    min-height: 500px;
+    width: 75%;
+    margin:0px auto;
+    box-shadow:0px 0px 40px black;
+    border-left:1px solid #b7b7b7;
+    background: rgba(255,255,255, 0.7);
+    padding-top:120px;
 }
