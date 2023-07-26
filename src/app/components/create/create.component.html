@@ -3,15 +3,24 @@
     <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
         <p>
             <label for="name">Nombre</label>
-            <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" />
+            <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" required />
+            <span class="form_error" *ngIf="name.touched && !name.valid">
+                El nombre es obligatorio
+            </span>
         </p>
         <p>
             <label for="description">Descripcion</label>
-            <textarea name="description" #description="ngModel" [(ngModel)]="project.description"></textarea>
+            <textarea name="description" #description="ngModel" [(ngModel)]="project.description" required ></textarea>
+            <span class="form_error" *ngIf="description.touched && !description.valid">
+                La descripcion es obligatoria
+            </span>
         </p>
         <p>
             <label for="category">Categoria</label>
-            <input type="text" name="category" #category="ngModel" [(ngModel)]="project.category" />
+            <input type="text" name="category" #category="ngModel" [(ngModel)]="project.category" required />
+            <span class="form_error" *ngIf="category.touched && !category.valid">
+                La categoria es obligatoria
+            </span>
         </p>
         <p>
             <label for="year">Año de Lanzamiento</label>
@@ -19,14 +28,17 @@
         </p>
         <p>
             <label for="langs">Lenguajes Utilizados</label>
-            <input type="text" name="langs" #langs="ngModel" [(ngModel)]="project.langs" />
+            <input type="text" name="langs" #langs="ngModel" [(ngModel)]="project.langs" required />
+            <span class="form_error" *ngIf="langs.touched && !langs.valid">
+                Los lenguajes son obligatorios
+            </span>
         </p>
         <p>
             <label for="image">Imagen Del Proyecto</label>
             <input type="file" name="image" placeholde="Subir Imagen" />
         </p>
     
-        <input type="submit" value="Enviar" />
+        <input type="submit" value="Enviar" [disabled]="!projectForm.form.valid" />
     
     
     </form>
