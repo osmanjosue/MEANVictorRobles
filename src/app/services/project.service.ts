@@ -7,10 +7,18 @@ import {Global} from './global';
 @Injectable()
 export class ProjectService{
     public url:string;
-    constructor (_http: HttpClient){
+    constructor ( private _http: HttpClient){
         this.url=Global.url;
     }
 testService(){
-    return 'Problando servicio de Angular';
+    return 'Probando servicio de Angular';
 }
+
+saveProject(project:Project):Observable<any>{
+    let params=JSON.stringify(project);
+    let headers= new HttpHeaders().set('content-type', 'application/json');
+
+    return this._http.post(this.url + 'save-project', params, {headers: headers});
+}
+
 }
