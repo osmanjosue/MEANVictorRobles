@@ -26,4 +26,9 @@ getProjects(): Observable<any>{
     return this._http.get(this.url+ 'projects', {headers:headers});
 }
 
+getProject(id:any):Observable<any>{                                                                 //el any del id: se lo puse yo por que me tiraba error.
+    let headers=new HttpHeaders().set('content-type', 'application/json');
+    return this._http.get(this.url+'project/'+id, {headers:headers});
+}
+
 }
