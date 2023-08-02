@@ -17,7 +17,6 @@ testService(){
 saveProject(project:Project):Observable<any>{
     let params=JSON.stringify(project);
     let headers= new HttpHeaders().set('content-type', 'application/json');
-
     return this._http.post(this.url + 'save-project', params, {headers: headers});
 }
 
@@ -29,6 +28,10 @@ getProjects(): Observable<any>{
 getProject(id:any):Observable<any>{                                                                 //el any del id: se lo puse yo por que me tiraba error.
     let headers=new HttpHeaders().set('content-type', 'application/json');
     return this._http.get(this.url+'project/'+id, {headers:headers});
+}
+deleteProject(id:any):Observable<any>{                                                                 //el any del id: se lo puse yo por que me tiraba error.
+    let headers=new HttpHeaders().set('content-type', 'application/json');
+    return this._http.delete(this.url+'project/'+id, {headers:headers});
 }
 
 }
